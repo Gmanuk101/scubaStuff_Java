@@ -24,7 +24,7 @@ public class DaltonsLaw {
     static public double calcNitrPress(double atmosphere)
     {
         double nit = 0.79;
-        double calc = nit * atmosphere;
+        double calc = nit * atmosphere; //
         return calc;
     }
 

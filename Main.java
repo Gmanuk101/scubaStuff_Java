@@ -13,7 +13,7 @@ public class Main {
         //uses bar to invoke daltonsLaw calc
         Scanner userDepthInput = new Scanner(System.in);
         System.out.println("Please Enter your Depth in whole number");
-        int input = userDepthInput.nextInt();
+        int input = userDepthInput.nextInt();//
         enterDepth(input);
         System.out.println("Depth Entered was: "+input);
         int atm = enterDepth(input);
