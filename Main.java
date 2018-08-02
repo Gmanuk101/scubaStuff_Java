@@ -1,37 +1,44 @@
 package com.revision;
 
-import javax.sound.midi.Soundbank;
-import java.util.Scanner;
+import com.revision.physics.DaltonsLaw;
 
-import static com.revision.physics.DaltonsLaw.*;
+import java.util.Scanner;
 
 public class Main {
 
+    private static DaltonsLaw depth = new DaltonsLaw();
+    private static String depthMessage = "You entered a depth of: ";
+    private static String atmLevelMessage = "Your ATM Level is: ";
+    private static String oxyMessage = "Your Oxygen Partial Pressure will be: ";
+    private static String nitroMessage = "Your Nitrogen Partial Pressure will be: ";
+    private static String totalPressureMessage = "Your Total Pressure in BAR is: ";
+
+
     public static void main(String[] args) {
-        //get user to input depth
-        //takes depth, converts to BAR
-        //uses bar to invoke daltonsLaw calc
+
+        System.out.println("Please Enter Your Depth:");
+        //set up scanner object to handle user input
         Scanner userDepthInput = new Scanner(System.in);
-        System.out.println("Please Enter your Depth in whole number");
-        int input = userDepthInput.nextInt();//
-        enterDepth(input);
-        System.out.println("Depth Entered was: "+input);
-        int atm = enterDepth(input);
-        double dalton = daltonsLaw(atm);
-        double oxyPart = calcOxyPress(atm);
-        double nitroPart = calcNitrPress(atm);
-        System.out.println("Your ATM is: "+atm);
-        System.out.println("Your total pressure is: "+dalton);
-        System.out.println("Your Oxygen Part Pressure is: "+oxyPart);
-        System.out.println("Your Nirtorgen Part Pressure is: "+nitroPart);
+        int depthInput = userDepthInput.nextInt();
+
+        //return to atmospheric rating from enterDepth() method
+        double atmosLevel = depth.enterDepth(depthInput);
+
+        //create variables to store atmosphere, oxt, nitro and total pressures
+
+        double oxyLeve = depth.calcOxyPress(atmosLevel);
+        double nitroLevel = depth.calcNitrPress(atmosLevel);
+        double totalPressure = depth.daltonsLaw(atmosLevel);
+        System.out.println(depthMessage + depthInput);
+        System.out.println(atmLevelMessage + atmosLevel);
+        System.out.println(oxyMessage + oxyLeve);
+        System.out.println(nitroMessage + nitroLevel);
+        System.out.println(totalPressureMessage + totalPressure);
+
+    }//end main
 
 
-    }
-
-
-
-
-}
+}//end class
 
 
 
