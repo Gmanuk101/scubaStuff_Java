@@ -6,15 +6,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static DaltonsLaw depth = new DaltonsLaw();
-    private static String depthMessage = "You entered a depth of: ";
-    private static String atmLevelMessage = "Your ATM Level is: ";
-    private static String oxyMessage = "Your Oxygen Partial Pressure will be: ";
-    private static String nitroMessage = "Your Nitrogen Partial Pressure will be: ";
-    private static String totalPressureMessage = "Your Total Pressure in BAR is: ";
-
-
     public static void main(String[] args) {
+
+        DaltonsLaw depth = new DaltonsLaw();
+        String depthMessage = "You entered a depth of: ";
+        String atmLevelMessage = "Your ATM Level is: ";
+        String oxyMessage = "Your Oxygen Partial Pressure will be: ";
+        String nitroMessage = "Your Nitrogen Partial Pressure will be: ";
+        String totalPressureMessage = "Your Total Pressure in BAR is: ";
+
 
         System.out.println("Please Enter Your Depth:");
         //set up scanner object to handle user input
